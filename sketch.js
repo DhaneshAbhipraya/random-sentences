@@ -9,8 +9,9 @@ let randomSentences;
 
 function setup() {
   noCanvas();
+  createP("");
   
-  createButton("Regenerate").mousePressed(function() {
+  createButton("Regenerate").style("position","fixed").mousePressed(function() {
     location.reload();
   });
   for (let i = 0; i < 100; i++) {
