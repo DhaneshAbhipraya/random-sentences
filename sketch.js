@@ -9,7 +9,7 @@ let randomSentences;
 
 function setup() {
   noCanvas();
-  createP("");
+  createP("<br>");
   document.getElementsByTagName("body")[0].style.backgroundColor = "black";
   document.getElementsByTagName("body")[0].style.color = "white";
   
