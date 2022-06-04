@@ -10,6 +10,8 @@ let randomSentences;
 function setup() {
   noCanvas();
   createP("");
+  document.getElementsByTagName("body")[0].style.backgroundColor = "black";
+  document.getElementsByTagName("body")[0].style.color = "white";
   
   createButton("Regenerate").style("position","fixed").mousePressed(function() {
     location.reload();

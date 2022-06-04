@@ -4,6 +4,29 @@ html, body {
   font-family: Roboto,Noto,sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  background: black;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: lightgray;
+}
+::-webkit-scrollbar-thumb:active {
+  background: gray;
+}
+::-webkit-scrollbar-track-piece {
+  background: darkgray;
+}
+::-webkit-scrollbar-button {
+  background: red;
+}
+::-webkit-scrollbar-track {
+  background: black;
+}
+
 canvas {
   display: block;
 }
