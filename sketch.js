@@ -1,10 +1,12 @@
 let texts = [];
 let randomAnimateNouns = ["person","elephant","pig","bird","cat","dog","cow","horse","sheep","snake","fish","lion","tiger","bear","zebra","giraffe","ant","bee","butterfly","camel","chicken","dolphin","duck","eagle","fish","goat","gorilla","hippo","kangaroo","lobster","monkey","mouse","penguin","pig","rabbit","rat","snail","snake","spider","turtle","whale","zebra"];
-let randomInanimateNouns = ["book","chair","plant","broom","mop","door","table","pot","pane","banner","stair","pit","head","tribe","tank","computer","egg","hat"];
+let randomInanimateNouns = ["book","chair","plant","broom","mop","door","table","pot","pane","banner","stair","pit","head","tribe","tank","computer","egg","ampule","umbrella"];
+let randomWearableNouns = ["uniform","hat","glove","shirt"]
 let randomConsumableNouns = ["apple","banana","orange","pear","peach","grape","strawberry","watermelon","mango","pineapple","coconut","kiwi","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato","carrot","onion","potato","broccoli","cabbage","spinach","lettuce","cauliflower","celery","celery","cucumber","tomato"];
-let randomNouns = randomAnimateNouns.concat(randomInanimateNouns,randomConsumableNouns);
+let randomNouns = randomAnimateNouns.concat(randomInanimateNouns,randomConsumableNouns,randomWearableNouns);
 let randomVerbs = ["test","remind","fail","blame","spend","enclose","top","advocate","contribute","smell","destroy"];
 let randomNames = ["josh","susan","johnie","amandus","viliam","maksimilian","laila","guendoleu","marine","jobeth","asklepiades","eduardo","sabbas","fulbert","julij","božena","agaue","erez","ekundayo","joeri","louis","guanting","líadain","joe","ælfþryð","heracleitus","dejan","sang","niko","hilarion"]
+let randomAdjectives = ["the","a","this"];
 let randomSentences;
 
 function setup() {
@@ -24,11 +26,15 @@ function setup() {
       "someone "+getRand(randomVerbs)+"s a "+getRand(randomAnimateNouns),
       "I ate a "+getRand(randomConsumableNouns)+" because "+getRand(randomNames)+" told me to",
       "the "+getRand(randomNouns)+" became the official symbol of our company because of "+getRand(randomNames),
+      "I wore "+getRand(randomNames)+"'s "+getRand(randomWearableNouns)+" because "+getRand(randomNames)+" told me to",
+      "I wore "+getRand(randomAdjectives)+" "+getRand(randomWearableNouns)+" because "+getRand(randomNames)+" told me to",
     ];
     let rand=getRand(randomSentences);
     rand=rand.replace(/eed/g,"ed");
     rand=rand.replace(/([^aiuoe])ys/g,"$1ies")
     rand=rand.replace(/os(\s|$)/g,"oes")
+    rand=rand.replace(/a ([aiuoe])/g,"an $1")
+    rand=rand.replace(/an uni/g,"a uni")
     createP((i+1)+':<br>'+rand).style("font-size","30px")
   }
 }
