@@ -16,7 +16,7 @@ function setup() {
   createButton("Regenerate").style("position","fixed").mousePressed(function() {
     location.reload();
   });
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000; i++) {
     randomSentences = [
       "a "+getRand(randomAnimateNouns)+" that "+getRand(randomVerbs)+"s",
       "a "+getRand(randomAnimateNouns)+" that "+getRand(randomVerbs)+"s for "+round(random(2,20))+" "+getRand(randomConsumableNouns)+"s",
@@ -27,6 +27,8 @@ function setup() {
     ];
     let rand=getRand(randomSentences);
     rand=rand.replace(/eed/g,"ed");
+    rand=rand.replace(/([^aiuoe])ys/g,"$1ies")
+    rand=rand.replace(/os(\s|$)/g,"oes")
     createP((i+1)+':<br>'+rand).style("font-size","30px")
   }
 }
